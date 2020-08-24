@@ -1,0 +1,6 @@
+{
+  "variants": 
+  {
+    "": { "model": "rec:block/machine/machine_frame" }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "rec:block/salt_block" }
+  }
+}

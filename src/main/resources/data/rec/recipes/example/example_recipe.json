@@ -1,0 +1,10 @@
+{
+  "type": "rec:example",
+  "group": "rec",
+  "output": {
+	"item": "minecraft:nether_star"
+	},
+  "input": {
+	"item": "minecraft:gold_ore"
+	}
+}

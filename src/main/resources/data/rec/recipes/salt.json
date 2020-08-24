@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "rec",
+  "ingredients": [
+    {
+      "item": "rec:salt_block"
+    }
+  ],
+  "result":
+  {
+    "item":"rec:salt",
+	"count": 4
+  }
+}

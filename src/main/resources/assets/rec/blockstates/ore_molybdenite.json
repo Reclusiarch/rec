@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "rec:block/ore/ore_molybdenite" }
+  }
+}

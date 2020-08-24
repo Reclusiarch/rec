@@ -1,0 +1,20 @@
+{
+  "type":"crafting_shaped",
+  "group": "rec",
+  "pattern":["iii","isi", " s "],
+  "key":
+  {
+    "s":
+    {
+      "item":"minecraft:stick"
+    },
+    "i":
+    {
+      "tag": "minecraft:furnace_materials"
+    }
+  },
+  "result":
+  {
+    "item":"rec:tool_stone_sledgehammer"
+  }
+}
