@@ -1,0 +1,10 @@
+{
+  "type": "rec:example",
+  "group": "rec",
+  "output": {
+	"item": "rec:dust_digenite"
+	},
+  "input": {
+	"item": "rec:chunks_digenite"
+	}
+}

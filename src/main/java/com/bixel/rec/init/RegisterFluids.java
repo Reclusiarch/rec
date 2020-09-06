@@ -24,7 +24,7 @@ public class RegisterFluids
 	/*
 	public static final ResourceLocation SALTWATER_STILL = RecMod.loc("fluid/alkaline_solution_still");
 	public static final ResourceLocation SALTWATER_FLOWING = RecMod.loc("fluid/alkaline_solution_flow");
-	public static final ResourceLocation SALTWATER_OVERLAY = RecMod.loc("fluid/alkaline_solution_overlay");
+	public static final ResourceLocation SALTWATER_OVERLAY = RecMod.loc("fluid/alkaline_solution_overlay");.
 	
 	public static Fluid waterAttributes = Blocks.WATER.getDefaultState().getFluidState().getFluid();
 	

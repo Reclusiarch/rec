@@ -53,6 +53,7 @@ public class RecFurnaceTileEntity extends TileEntity implements ITickableTileEnt
 	public int currentSmeltTime;
 	public final int maxSmeltTime = 100; //ticks
 	private FurnaceItemHandler inventory;
+	private boolean itemInSlot = false; //not recorded with NBT
 	
 	public RecFurnaceTileEntity(TileEntityType<?> tileEntityTypeIn) 
 	{
@@ -93,6 +94,7 @@ public class RecFurnaceTileEntity extends TileEntity implements ITickableTileEnt
 						//currently smelting - set blockstate smelting
 						this.world.setBlockState(this.pos, this.getBlockState().with(RecFurnaceBlock.LIT, true));
 						this.currentSmeltTime++;
+						itemInSlot = true; //sets to true to mark that it is occupied
 						dirty = true;
 					}
 					else
@@ -103,7 +105,20 @@ public class RecFurnaceTileEntity extends TileEntity implements ITickableTileEnt
 						ItemStack output = this.getRecipe(this.inventory.getStackInSlot(0)).getRecipeOutput();
 						this.inventory.insertItem(1, output.copy(), false);
 						this.inventory.decrStackSize(0, 1);
+						itemInSlot = false;
 						dirty = true;
+					}
+				}
+				else
+				{
+					if(itemInSlot) //so we are not marking dirty just because it is empty
+					{
+						//reset current smelt time if items removed
+						//remove burning effects
+						this.world.setBlockState(this.pos, this.getBlockState().with(RecFurnaceBlock.LIT, false));
+						this.currentSmeltTime = 0;
+						dirty = true;
+						itemInSlot = false;
 					}
 				}
 			}

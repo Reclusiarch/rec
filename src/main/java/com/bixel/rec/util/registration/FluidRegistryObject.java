@@ -4,6 +4,8 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
+import com.bixel.rec.RecMod;
+
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
@@ -24,12 +26,12 @@ public class FluidRegistryObject<STILL extends Fluid, FLOWING extends Fluid, BLO
     public BLOCK getBlock() { return blockRO.get(); }
     public BUCKET getBucket() { return bucketRO.get(); }
     
-    public FluidRegistryObject(String modid, String name) 
+    public FluidRegistryObject(String name) 
     {
-        this.stillRO = RegistryObject.of(new ResourceLocation(modid, name), ForgeRegistries.FLUIDS);
-        this.flowingRO = RegistryObject.of(new ResourceLocation(modid, "flowing_" + name), ForgeRegistries.FLUIDS);
-        this.blockRO = RegistryObject.of(new ResourceLocation(modid, name), ForgeRegistries.BLOCKS);
-        this.bucketRO = RegistryObject.of(new ResourceLocation(modid, "bucket_" + name), ForgeRegistries.ITEMS);
+        this.stillRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, name), ForgeRegistries.FLUIDS);
+        this.flowingRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "flowing_" + name), ForgeRegistries.FLUIDS);
+        this.blockRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, name), ForgeRegistries.BLOCKS);
+        this.bucketRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "bucket_" + name), ForgeRegistries.ITEMS);
     }
     
   //Make sure these update methods are package local as only the FluidDeferredRegister should be messing with them

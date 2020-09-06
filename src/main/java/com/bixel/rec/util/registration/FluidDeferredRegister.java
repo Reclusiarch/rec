@@ -70,7 +70,7 @@ public class FluidDeferredRegister
         //For now all our fluids use the same "overlay" for being against glass as vanilla water.
         builder.overlay(OVERLAY);
         //Create the registry object with dummy entries that we can use as part of the supplier but that works as use in suppliers
-        FluidRegistryObject<Source, Flowing, FlowingFluidBlock, BucketItem> fluidRegistryObject = new FluidRegistryObject<>(modid, name);
+        FluidRegistryObject<Source, Flowing, FlowingFluidBlock, BucketItem> fluidRegistryObject = new FluidRegistryObject<>(name);
         //Pass in suppliers that are wrapped instead of direct references to the registry objects, so that when we update the registry object to
         // point to a new object it gets updated properly.
         ForgeFlowingFluid.Properties properties = new ForgeFlowingFluid.Properties(fluidRegistryObject::getStillFluid,

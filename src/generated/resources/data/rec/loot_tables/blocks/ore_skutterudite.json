@@ -10,6 +10,21 @@
             {
               "condition": "minecraft:match_tool",
               "predicate": {
+                "item": "minecraft:stone_pickaxe"
+              }
+            },
+            {
+              "condition": "minecraft:survives_explosion"
+            }
+          ],
+          "name": "rec:ore_skutterudite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
                 "item": "minecraft:iron_pickaxe"
               }
             },

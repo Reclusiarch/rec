@@ -6,6 +6,7 @@ import com.bixel.rec.objects.items.SledgeHammer;
 import com.bixel.rec.objects.materials.RecMaterials;
 
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 import net.minecraftforge.fml.RegistryObject;
@@ -37,26 +38,6 @@ public class RegisterItems
 	public static final RegistryObject<Item> CHUNKS_MOLYBDENITE = ITEMS.register("chunks_molybdenite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_SKUTTERUDITE = ITEMS.register("chunks_skutterudite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_WOLFRAMITE = ITEMS.register("chunks_wolframite", () -> new Item(prop));
-	
-	/*
-	public static final List<Item> CHUNKS = new ArrayList<Item>();
-	
-	static 
-	{
-		CHUNKS.add(CHUNKS_AZURITE_DUST.get());
-		CHUNKS.add(CHUNKS_BORNITE_DUST.get());
-		CHUNKS.add(CHUNKS_COBALTITE_DUST.get());
-		CHUNKS.add(CHUNKS_DIGENITE_DUST.get());
-		CHUNKS.add(CHUNKS_DIOPTASE_DUST.get());
-		CHUNKS.add(CHUNKS_ERYTHRITE_DUST.get());
-		CHUNKS.add(CHUNKS_GOETHITE_DUST.get());
-		CHUNKS.add(CHUNKS_HEMATITE_DUST.get());
-		CHUNKS.add(CHUNKS_LIMONITE_DUST.get());
-		CHUNKS.add(CHUNKS_MAGNETITE_DUST.get());
-		CHUNKS.add(CHUNKS_MOLYBDENITE_DUST.get());
-		CHUNKS.add(CHUNKS_SKUTTERUDITE_DUST.get());
-		CHUNKS.add(CHUNKS_WOLFRAMITE_DUST.get());
-    }*/
 	
 	/**
 	 * GANGUE
@@ -109,11 +90,6 @@ public class RegisterItems
 	public static final RegistryObject<Item> SMALLDUST_SKUTTERUDITE = ITEMS.register("smalldust_skutterudite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_WOLFRAMITE = ITEMS.register("smalldust_wolframite", () -> new Item(prop));
 	
-	public static final RegistryObject<Item> MACHINE_FRAME = ITEMS.register("machine_frame", () -> new BlockItem(RegisterBlocks.MACHINE_FRAME.get(), prop));
-	public static final RegistryObject<Item> REC_FURNACE_BLOCK = ITEMS.register("rec_furnace_block", () -> new BlockItem(RegisterBlocks.FURNACE_BLOCK.get(), prop));
-	public static final RegistryObject<Item> QUARRY = ITEMS.register("quarry", () -> new BlockItem(RegisterBlocks.QUARRY.get(), prop));
-	public static final RegistryObject<Item> FIRST_BLOCK = ITEMS.register("first_block", () -> new BlockItem(RegisterBlocks.FIRST_BLOCK.get(), prop));
-	
 	/**
 	 * ORES
 	 */
@@ -135,11 +111,22 @@ public class RegisterItems
 	 */
 	public static final RegistryObject<SledgeHammer> IRON_SLEDGEHAMMER = ITEMS.register("tool_iron_sledgehammer", () -> new SledgeHammer(RecMaterials.SLEDGEHAMMER_IRON));
 	public static final RegistryObject<SledgeHammer> STONE_SLEDGEHAMMER = ITEMS.register("tool_stone_sledgehammer", () -> new SledgeHammer(RecMaterials.SLEDGEHAMMER_STONE));
-	
+	/**
+	 * BUCKETS
+	 */
+	//public static final RegistryObject<BucketItem> EXAMPLE_BUCKET = ITEMS.register("example_bucket", () -> new BucketItem(() -> RegisterFluids.ALKALINE_SOLUTION.getFluid(), prop.maxStackSize(1)));
 	/**
 	 * RESOURCES
 	 */
 	public static final RegistryObject<Item> SALT_BLOCK = ITEMS.register("salt_block", () -> new BlockItem(RegisterBlocks.SALT_BLOCK.get(), prop));
 	public static final RegistryObject<Item> SALT = ITEMS.register("salt", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALL_SALT = ITEMS.register("small_salt", () -> new Item(prop));
+	
+	/**
+	 * MACHINES
+	 */
+	public static final RegistryObject<Item> MACHINE_FRAME = ITEMS.register("machine_frame", () -> new BlockItem(RegisterBlocks.MACHINE_FRAME.get(), prop));
+	public static final RegistryObject<Item> REC_FURNACE_BLOCK = ITEMS.register("rec_furnace_block", () -> new BlockItem(RegisterBlocks.FURNACE_BLOCK.get(), prop));
+	public static final RegistryObject<Item> QUARRY = ITEMS.register("quarry", () -> new BlockItem(RegisterBlocks.QUARRY.get(), prop));
+	public static final RegistryObject<Item> FIRST_BLOCK = ITEMS.register("first_block", () -> new BlockItem(RegisterBlocks.FIRST_BLOCK.get(), prop));
 }

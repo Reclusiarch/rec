@@ -38,7 +38,7 @@ public class RecFurnaceScreen extends ContainerScreen<RecFurnaceContainer>
 	@Override
 	protected void func_230459_a_(MatrixStack p_230430_1_, int mouseX, int mouseY) 
 	{
-		super.func_230459_a_(p_230430_1_, mouseX, mouseY);
+		super.func_230459_a_(p_230430_1_, mouseX, mouseY); 
 		//this.font.drawString(this.title.getFormattedText(), 8.0f, 6.0f, 4210752);
 		this.font.drawString(p_230430_1_, this.title.getUnformattedComponentText(), 8.0f, 8.0f, 0x404040);
 		//this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0f, 90.0f, 4210752);

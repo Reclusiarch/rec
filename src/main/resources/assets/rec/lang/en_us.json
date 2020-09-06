@@ -11,6 +11,9 @@
   	
   	"_comment": "Tiles",
   	"block.rec.gangue_sifter": "Gangue Sifter",
+
+  	"_comment": "Machines",
+  	"block.rec.rec_furnace_block": "Furnace",
   	
   	"_comment": "Ores",
   	"block.rec.ore_azurite": "Azurite Ore",
