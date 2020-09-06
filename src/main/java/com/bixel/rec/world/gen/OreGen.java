@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 import com.bixel.rec.config.RecConfig;
 import com.bixel.rec.config.WorldConfig.OreConfig;
 import com.bixel.rec.config.WorldConfig.SaltConfig;
-import com.bixel.rec.init.BlockRegister;
+import com.bixel.rec.init.RegisterBlocks;
 import com.bixel.rec.objects.blocks.RecOreBlock;
 import com.bixel.rec.objects.ore.OreLibrary;
 import com.google.common.collect.Lists;
@@ -47,7 +47,7 @@ public class OreGen
 			//ORES.put(type, getOreFeature(type.block, RecConfig.world.ores.get(type)));
             ORES.put(type, RecConfig.world.ores.get(type));
         }
-		SALT_FEATURE = getSaltFeature(BlockRegister.SALT_BLOCK.get(), RecConfig.world.salt);
+		SALT_FEATURE = getSaltFeature(RegisterBlocks.SALT_BLOCK.get(), RecConfig.world.salt);
         //Retrogen features
 		/*
         if (RecConfig.world.enableRegeneration.get()) 

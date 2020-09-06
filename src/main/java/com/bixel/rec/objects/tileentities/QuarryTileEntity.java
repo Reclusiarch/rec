@@ -1,6 +1,6 @@
 package com.bixel.rec.objects.tileentities;
 
-import com.bixel.rec.init.TileEntityRegister;
+import com.bixel.rec.init.RegisterTileEntities;
 import com.bixel.rec.util.helper.NBTHelper;
 
 import net.minecraft.block.Block;
@@ -24,7 +24,7 @@ public class QuarryTileEntity extends TileEntity implements ITickableTileEntity
 
 	public QuarryTileEntity()
 	{
-		this(TileEntityRegister.QUARRY.get());
+		this(RegisterTileEntities.QUARRY.get());
 	}
 
 	@Override

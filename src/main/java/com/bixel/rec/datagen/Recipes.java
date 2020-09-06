@@ -2,7 +2,7 @@ package com.bixel.rec.datagen;
 
 import java.util.function.Consumer;
 
-import com.bixel.rec.init.BlockRegister;
+import com.bixel.rec.init.RegisterBlocks;
 
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.block.Blocks;
@@ -19,7 +19,7 @@ public class Recipes extends RecipeProvider
 	protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
 	{
 		//just an example - dont use
-		ShapedRecipeBuilder.shapedRecipe(BlockRegister.MACHINE_FRAME.get())
+		ShapedRecipeBuilder.shapedRecipe(RegisterBlocks.MACHINE_FRAME.get())
         .patternLine("xxx")
         .patternLine("x#x")
         .patternLine("xxx")

@@ -20,7 +20,7 @@ public class ModSetup
 	    public ItemStack createIcon() 
 	    {
 	    	//return new ItemStack(BlockInit.chiseled_stone_cross);
-	        return new ItemStack(BlockRegister.MACHINE_FRAME.get());
+	        return new ItemStack(RegisterBlocks.MACHINE_FRAME.get());
 	    }
 	};
 	

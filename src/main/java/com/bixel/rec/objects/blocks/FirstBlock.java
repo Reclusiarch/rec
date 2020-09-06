@@ -1,6 +1,6 @@
 package com.bixel.rec.objects.blocks;
 
-import com.bixel.rec.init.TileEntityRegister;
+import com.bixel.rec.init.RegisterTileEntities;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
@@ -22,6 +22,6 @@ public class FirstBlock extends ModelBlock
 	@Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world)
     {
-    	return TileEntityRegister.FIRST_BLOCK.get().create();
+    	return RegisterTileEntities.FIRST_BLOCK.get().create();
     }
 }

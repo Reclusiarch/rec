@@ -7,6 +7,7 @@ import com.bixel.rec.RecMod;
 import com.bixel.rec.objects.blocks.MachineFrameBlock;
 import com.bixel.rec.objects.blocks.ModelBlock;
 import com.bixel.rec.objects.blocks.QuarryBlock;
+import com.bixel.rec.objects.blocks.RecFurnaceBlock;
 import com.bixel.rec.objects.blocks.RecOreBlock;
 import com.bixel.rec.objects.ore.OreLibrary;
 
@@ -19,7 +20,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class BlockRegister 
+public class RegisterBlocks 
 {
 
 	public static final List<RecOreBlock> ORES = new ArrayList<RecOreBlock>();
@@ -66,4 +67,6 @@ public class BlockRegister
 		new QuarryBlock(Block.Properties.create(Material.IRON, MaterialColor.IRON)));
 	public static final RegistryObject<Block> FIRST_BLOCK = BLOCKS.register("first_block", () -> 
 		new ModelBlock(Block.Properties.create(Material.IRON, MaterialColor.IRON)));
+	public static final RegistryObject<RecFurnaceBlock> FURNACE_BLOCK = BLOCKS.register("rec_furnace_block", () -> 
+		new RecFurnaceBlock(Block.Properties.create(Material.IRON, MaterialColor.IRON)));
 }

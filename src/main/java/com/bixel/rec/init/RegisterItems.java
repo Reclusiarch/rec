@@ -1,8 +1,5 @@
 package com.bixel.rec.init;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.bixel.rec.RecMod;
 import com.bixel.rec.objects.items.RecOreItem;
 import com.bixel.rec.objects.items.SledgeHammer;
@@ -15,7 +12,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class ItemRegister 
+public class RegisterItems 
 {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, RecMod.MOD_ID);
 	
@@ -112,26 +109,27 @@ public class ItemRegister
 	public static final RegistryObject<Item> SMALLDUST_SKUTTERUDITE = ITEMS.register("smalldust_skutterudite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_WOLFRAMITE = ITEMS.register("smalldust_wolframite", () -> new Item(prop));
 	
-	public static final RegistryObject<Item> MACHINE_FRAME = ITEMS.register("machine_frame", () -> new BlockItem(BlockRegister.MACHINE_FRAME.get(), prop));
-	public static final RegistryObject<Item> QUARRY = ITEMS.register("quarry", () -> new BlockItem(BlockRegister.QUARRY.get(), prop));
-	public static final RegistryObject<Item> FIRST_BLOCK = ITEMS.register("first_block", () -> new BlockItem(BlockRegister.FIRST_BLOCK.get(), prop));
+	public static final RegistryObject<Item> MACHINE_FRAME = ITEMS.register("machine_frame", () -> new BlockItem(RegisterBlocks.MACHINE_FRAME.get(), prop));
+	public static final RegistryObject<Item> REC_FURNACE_BLOCK = ITEMS.register("rec_furnace_block", () -> new BlockItem(RegisterBlocks.FURNACE_BLOCK.get(), prop));
+	public static final RegistryObject<Item> QUARRY = ITEMS.register("quarry", () -> new BlockItem(RegisterBlocks.QUARRY.get(), prop));
+	public static final RegistryObject<Item> FIRST_BLOCK = ITEMS.register("first_block", () -> new BlockItem(RegisterBlocks.FIRST_BLOCK.get(), prop));
 	
 	/**
 	 * ORES
 	 */
-	public static final RegistryObject<RecOreItem> ORE_AZURITE = ITEMS.register("ore_azurite", () -> new RecOreItem(BlockRegister.ORE_AZURITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_BORNITE = ITEMS.register("ore_bornite", () -> new RecOreItem(BlockRegister.ORE_BORNITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_COBALTITE = ITEMS.register("ore_cobaltite", () -> new RecOreItem(BlockRegister.ORE_COBALTITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_DIGENITE = ITEMS.register("ore_digenite", () -> new RecOreItem(BlockRegister.ORE_DIGENITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_DIOPTASE = ITEMS.register("ore_dioptase", () -> new RecOreItem(BlockRegister.ORE_DIOPTASE.get()));
-	public static final RegistryObject<RecOreItem> ORE_ERYTHRITE = ITEMS.register("ore_erythrite", () -> new RecOreItem(BlockRegister.ORE_ERYTHRITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_GOETHITE = ITEMS.register("ore_goethite", () -> new RecOreItem(BlockRegister.ORE_GOETHITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_HEMATITE = ITEMS.register("ore_hematite", () -> new RecOreItem(BlockRegister.ORE_HEMATITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_LIMONITE = ITEMS.register("ore_limonite", () -> new RecOreItem(BlockRegister.ORE_LIMONITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_MAGNETITE = ITEMS.register("ore_magnetite", () -> new RecOreItem(BlockRegister.ORE_MAGNETITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_MOLYBDENITE = ITEMS.register("ore_molybdenite", () -> new RecOreItem(BlockRegister.ORE_MOLYBDENITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_SKUTTERUDITE = ITEMS.register("ore_skutterudite", () -> new RecOreItem(BlockRegister.ORE_SKUTTERUDITE.get()));
-	public static final RegistryObject<RecOreItem> ORE_WOLFRAMITE = ITEMS.register("ore_wolframite", () -> new RecOreItem(BlockRegister.ORE_WOLFRAMITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_AZURITE = ITEMS.register("ore_azurite", () -> new RecOreItem(RegisterBlocks.ORE_AZURITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_BORNITE = ITEMS.register("ore_bornite", () -> new RecOreItem(RegisterBlocks.ORE_BORNITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_COBALTITE = ITEMS.register("ore_cobaltite", () -> new RecOreItem(RegisterBlocks.ORE_COBALTITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_DIGENITE = ITEMS.register("ore_digenite", () -> new RecOreItem(RegisterBlocks.ORE_DIGENITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_DIOPTASE = ITEMS.register("ore_dioptase", () -> new RecOreItem(RegisterBlocks.ORE_DIOPTASE.get()));
+	public static final RegistryObject<RecOreItem> ORE_ERYTHRITE = ITEMS.register("ore_erythrite", () -> new RecOreItem(RegisterBlocks.ORE_ERYTHRITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_GOETHITE = ITEMS.register("ore_goethite", () -> new RecOreItem(RegisterBlocks.ORE_GOETHITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_HEMATITE = ITEMS.register("ore_hematite", () -> new RecOreItem(RegisterBlocks.ORE_HEMATITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_LIMONITE = ITEMS.register("ore_limonite", () -> new RecOreItem(RegisterBlocks.ORE_LIMONITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_MAGNETITE = ITEMS.register("ore_magnetite", () -> new RecOreItem(RegisterBlocks.ORE_MAGNETITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_MOLYBDENITE = ITEMS.register("ore_molybdenite", () -> new RecOreItem(RegisterBlocks.ORE_MOLYBDENITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_SKUTTERUDITE = ITEMS.register("ore_skutterudite", () -> new RecOreItem(RegisterBlocks.ORE_SKUTTERUDITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_WOLFRAMITE = ITEMS.register("ore_wolframite", () -> new RecOreItem(RegisterBlocks.ORE_WOLFRAMITE.get()));
 	/**
 	 * TOOLS
 	 */
@@ -141,7 +139,7 @@ public class ItemRegister
 	/**
 	 * RESOURCES
 	 */
-	public static final RegistryObject<Item> SALT_BLOCK = ITEMS.register("salt_block", () -> new BlockItem(BlockRegister.SALT_BLOCK.get(), prop));
+	public static final RegistryObject<Item> SALT_BLOCK = ITEMS.register("salt_block", () -> new BlockItem(RegisterBlocks.SALT_BLOCK.get(), prop));
 	public static final RegistryObject<Item> SALT = ITEMS.register("salt", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALL_SALT = ITEMS.register("small_salt", () -> new Item(prop));
 }

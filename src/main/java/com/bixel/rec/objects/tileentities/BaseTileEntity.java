@@ -1,6 +1,6 @@
 package com.bixel.rec.objects.tileentities;
 
-import com.bixel.rec.init.TileEntityRegister;
+import com.bixel.rec.init.RegisterTileEntities;
 
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -15,7 +15,7 @@ public class BaseTileEntity extends TileEntity implements ITickableTileEntity
 	
 	public BaseTileEntity()
 	{
-		this(TileEntityRegister.FIRST_BLOCK.get());
+		this(RegisterTileEntities.FIRST_BLOCK.get());
 	}
 
 	@Override

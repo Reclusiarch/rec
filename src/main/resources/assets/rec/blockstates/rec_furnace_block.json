@@ -1,0 +1,9 @@
+{
+  "variants": 
+  {
+	"facing=north": { "model": "rec:block/machine/rec_furnace_block" },
+	"facing=south": { "model": "rec:block/machine/rec_furnace_block", "y": 180 },
+	"facing=west": { "model": "rec:block/machine/rec_furnace_block", "y": 270 },
+	"facing=east": { "model": "rec:block/machine/rec_furnace_block", "y": 90 }
+  }
+}

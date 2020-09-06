@@ -1,6 +1,6 @@
 package com.bixel.rec.objects.blocks;
 
-import com.bixel.rec.init.TileEntityRegister;
+import com.bixel.rec.init.RegisterTileEntities;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -23,6 +23,6 @@ public class QuarryBlock extends Block
 	@Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world)
     {
-    	return TileEntityRegister.QUARRY.get().create();
+    	return RegisterTileEntities.QUARRY.get().create();
     }
 }

@@ -11,7 +11,7 @@ import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid.Flowing;
 import net.minecraftforge.fluids.ForgeFlowingFluid.Source;
 
-public class FluidRegister 
+public class RegisterFluids 
 {
 	public static final FluidDeferredRegister FLUIDS_ADVANCED = new FluidDeferredRegister(RecMod.MOD_ID);
 	

@@ -2,6 +2,10 @@ package com.bixel.rec.objects.blocks;
 
 import java.util.Random;
 
+import com.bixel.rec.init.RegisterTileEntities;
+import com.bixel.rec.objects.tileentities.RecFurnaceTileEntity;
+import com.bixel.rec.util.handler.FurnaceItemHandler;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -42,6 +46,12 @@ public class RecFurnaceBlock extends ModelBlock
 	public boolean hasTileEntity(BlockState state)
 	{
 		return true;
+	}
+	
+	@Override
+	public TileEntity createTileEntity(BlockState state, IBlockReader world)
+	{
+		return RegisterTileEntities.FURNACE_BLOCK.get().create();
 	}
 	
 	protected void fillStateContainer(Builder<Block, BlockState> builder)
@@ -128,7 +138,7 @@ public class RecFurnaceBlock extends ModelBlock
 		if (tile instanceof RecFurnaceTileEntity && state.getBlock() != newState.getBlock()) 
 		{
 			RecFurnaceTileEntity furnace = (RecFurnaceTileEntity) tile;
-			((ExampleItemHandler) furnace.getInventory()).toNonNullList().forEach(item -> 
+			((FurnaceItemHandler)furnace.getInventory()).toNonNullList().forEach(item -> 
 			{
 				ItemEntity itemEntity = new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), item);
 				worldIn.addEntity(itemEntity);

@@ -1,7 +1,9 @@
 package com.bixel.rec.init;
 
 import com.bixel.rec.RecMod;
+import com.bixel.rec.gui.RecFurnaceScreen;
 
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderTooltipEvent;
@@ -15,7 +17,7 @@ public class ClientSetup
 {
   public static void init(final FMLClientSetupEvent event) 
   {
-      //ScreenManager.registerFactory(ContainerRegister.EXAMPLE_CHEST.get(), ExampleChestScreen::new);
+      ScreenManager.registerFactory(RegisterContainers.REC_FURNACE_CONTAINER.get(), RecFurnaceScreen::new);
   }
   
   @SubscribeEvent

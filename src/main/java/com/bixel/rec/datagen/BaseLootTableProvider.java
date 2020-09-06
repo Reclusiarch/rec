@@ -8,7 +8,7 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.bixel.rec.init.ItemRegister;
+import com.bixel.rec.init.RegisterItems;
 import com.bixel.rec.objects.blocks.RecOreBlock;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -77,9 +77,9 @@ public abstract class BaseLootTableProvider extends LootTableProvider
     	ItemPredicate.Builder predicate_iron_pickaxe = ItemPredicate.Builder.create();
     	predicate_iron_pickaxe.item(Items.IRON_PICKAXE);
     	ItemPredicate.Builder predicate_stone_hammer = ItemPredicate.Builder.create();
-    	predicate_stone_hammer.item(ItemRegister.STONE_SLEDGEHAMMER.get());
+    	predicate_stone_hammer.item(RegisterItems.STONE_SLEDGEHAMMER.get());
     	ItemPredicate.Builder predicate_iron_hammer = ItemPredicate.Builder.create();
-    	predicate_iron_hammer.item(ItemRegister.IRON_SLEDGEHAMMER.get());
+    	predicate_iron_hammer.item(RegisterItems.IRON_SLEDGEHAMMER.get());
     	
     	LootPool.Builder builder = LootPool.builder()
                 .rolls(ConstantRange.of(1))

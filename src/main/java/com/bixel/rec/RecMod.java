@@ -4,13 +4,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.bixel.rec.config.RecConfig;
-import com.bixel.rec.init.BlockRegister;
+import com.bixel.rec.init.RegisterBlocks;
 import com.bixel.rec.init.ClientSetup;
-import com.bixel.rec.init.FluidRegister;
-import com.bixel.rec.init.ItemRegister;
+import com.bixel.rec.init.RegisterContainers;
+import com.bixel.rec.init.RegisterFluids;
+import com.bixel.rec.init.RegisterItems;
 import com.bixel.rec.init.ModSetup;
-import com.bixel.rec.init.RecipeSerializerRegister;
-import com.bixel.rec.init.TileEntityRegister;
+import com.bixel.rec.init.RegisterRecipeSerializer;
+import com.bixel.rec.init.RegisterTileEntities;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -44,12 +45,13 @@ public class RecMod
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     	RecConfig.registerConfigs(ModLoadingContext.get());
 
-    	FluidRegister.FLUIDS_ADVANCED.register(modEventBus);
+    	RegisterFluids.FLUIDS_ADVANCED.register(modEventBus);
     	//FluidRegister.FLUIDS.register(modEventBus);
-    	BlockRegister.BLOCKS.register(modEventBus);
-        ItemRegister.ITEMS.register(modEventBus);
-        RecipeSerializerRegister.RECIPE_SERIALIZERS.register(modEventBus);
-        TileEntityRegister.TILE_ENTITY_TYPES.register(modEventBus);
+    	RegisterBlocks.BLOCKS.register(modEventBus);
+        RegisterItems.ITEMS.register(modEventBus);
+        RegisterRecipeSerializer.RECIPE_SERIALIZERS.register(modEventBus);
+        RegisterTileEntities.TILE_ENTITY_TYPES.register(modEventBus);
+        RegisterContainers.CONTAINER_TYPES.register(modEventBus);
 
     	modEventBus.addListener(ModSetup::init);
     	modEventBus.addListener(ClientSetup::init);
