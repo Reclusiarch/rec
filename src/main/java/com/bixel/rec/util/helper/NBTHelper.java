@@ -3,7 +3,7 @@ package com.bixel.rec.util.helper;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.bixel.rec.objects.tileentities.QuarryTileEntity;
+import com.bixel.rec.objects.tiles.QuarryTileEntity;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

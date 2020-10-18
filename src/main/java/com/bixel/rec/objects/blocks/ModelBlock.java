@@ -1,8 +1,13 @@
 package com.bixel.rec.objects.blocks;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -12,7 +17,11 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ModelBlock extends Block
 {
@@ -23,6 +32,9 @@ public class ModelBlock extends Block
 		super(properties); 
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
 	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) { }
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context)
@@ -54,4 +66,6 @@ public class ModelBlock extends Block
 	{
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 	}
+
+
 }

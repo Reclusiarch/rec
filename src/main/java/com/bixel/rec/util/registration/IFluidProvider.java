@@ -24,7 +24,8 @@ public interface IFluidProvider
         return new FluidStack(getFluid(), size);
     }
 
-    default ResourceLocation getRegistryName() {
+    default ResourceLocation getRegistryName() 
+    {
         return getFluid().getRegistryName();
     }
     

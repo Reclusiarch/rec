@@ -19,7 +19,7 @@ public interface IModRecipe extends IRecipe<RecipeWrapper>
 	@Override
 	default IRecipeType<?> getType()
 	{
-		return Registry.RECIPE_TYPE.getValue(RECIPE_TYPE_ID).get();
+		return Registry.RECIPE_TYPE.getOrDefault(RECIPE_TYPE_ID);
 	}
 	
 	@Override

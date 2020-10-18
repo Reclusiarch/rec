@@ -1,5 +1,8 @@
 package com.bixel.rec.config;
 
+import com.bixel.rec.config.value.CachedPrimitiveValue;
+import com.bixel.rec.config.value.CachedResolvableConfigValue;
+
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;
 

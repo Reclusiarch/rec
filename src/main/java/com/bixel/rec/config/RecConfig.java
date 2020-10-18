@@ -11,11 +11,13 @@ import net.minecraftforge.fml.loading.FMLPaths;
 public class RecConfig
 {
 	public static final WorldConfig world = new WorldConfig();
+	public static final GeneralConfig general = new GeneralConfig();
 	
     public static void registerConfigs(ModLoadingContext modLoadingContext) 
     {
         ModContainer modContainer = modLoadingContext.getActiveContainer();
         registerConfig(modContainer, world);
+        registerConfig(modContainer, general);
     }
     
     public static final Path CONFIG_DIR;

@@ -18,6 +18,11 @@ public class RegisterFluids
 	public static final FluidRegistryObject<Source, Flowing, FlowingFluidBlock, BucketItem> ALKALINE_SOLUTION = FLUIDS_ADVANCED.register("alkaline_solution",
 	          FluidAttributes.builder(new ResourceLocation("block/water_still"), new ResourceLocation("block/water_flow")).color(0xFF3393FF));
 	
+	public static final FluidRegistryObject<Source, Flowing, FlowingFluidBlock, BucketItem> ETHYLENE_GLYCOL = FLUIDS_ADVANCED.register("ethylene_glycol",
+	          FluidAttributes.builder(RecMod.loc("fluid/liquid_still"), RecMod.loc("fluid/liquid_flow")));
+	
+	public static final FluidRegistryObject<Source, Flowing, FlowingFluidBlock, BucketItem> FLUID_GLOWSTONE = FLUIDS_ADVANCED.register("glowstone",
+	          FluidAttributes.builder(RecMod.loc("fluid/glowstone_still"), RecMod.loc("fluid/glowstone_flow")));
 	/**
 	 * OLD CODE
 	 */

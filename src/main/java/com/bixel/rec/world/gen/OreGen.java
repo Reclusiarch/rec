@@ -1,7 +1,10 @@
 package com.bixel.rec.world.gen;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 
@@ -18,15 +21,17 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
+import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureSpread;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
-import net.minecraft.world.gen.placement.CountRangeConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.placement.TopSolidRangeConfig;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class OreGen 
@@ -91,9 +96,10 @@ public class OreGen
 		
 	    if (oreConfig.shouldGenerate.get()) 
 	    {
-	        return Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NATURAL_STONE,
-	        		block.getDefaultState(), oreConfig.maxVeinSize.get())).withPlacement(Placement.COUNT_RANGE.configure(
-	              new CountRangeConfig(oreConfig.perChunk.get(), oreConfig.bottomOffset.get(), oreConfig.topOffset.get(), oreConfig.maxHeight.get())));
+	    	return Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.field_241882_a, block.getDefaultState(), 
+	    			oreConfig.maxVeinSize.get())).withPlacement(Placement.field_242907_l.configure(
+	    					new TopSolidRangeConfig(0, 0, oreConfig.maxHeight.get())).func_242728_a().func_242731_b(oreConfig.perChunk.get()));
+	        //return Feature.ORE.withConfiguration(new OreFeatureConfig(FillerBlockType.NATURAL_STONE, block.getDefaultState(), oreConfig.maxVeinSize.get())).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(oreConfig.perChunk.get(), oreConfig.bottomOffset.get(), oreConfig.topOffset.get(), oreConfig.maxHeight.get())));
 	    }
 	    return null;
 	}
@@ -110,9 +116,14 @@ public class OreGen
         if (saltConfig.shouldGenerate.get()) 
         {
             BlockState state = block.getDefaultState();
-            return Feature.DISK.withConfiguration(new SphereReplaceConfig(state, saltConfig.maxVeinSize.get(), saltConfig.ySize.get(),
-                  Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState(), state)))
-                  .withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(saltConfig.perChunk.get())));
+            
+            ArrayList<BlockState> list = Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState(), state);
+            
+            return Feature.DISK.withConfiguration(new SphereReplaceConfig(state, FeatureSpread.func_242252_a(saltConfig.ySize.get()), saltConfig.maxVeinSize.get(), list))
+                    .withPlacement(Placement.field_242907_l.configure(new TopSolidRangeConfig(0, 0, 90)).func_242728_a().func_242731_b(saltConfig.perChunk.get()));
+            /*
+            return Feature.DISK.withConfiguration(new SphereReplaceConfig(state, saltConfig.maxVeinSize.get(), saltConfig.ySize.get(), list))
+                  .withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(saltConfig.perChunk.get())));*/
         }
         return null;
     }
@@ -138,6 +149,7 @@ public class OreGen
 			addFeature(biome, getOreFeature(OreLibrary.MOLYBDENITE));
 			addFeature(biome, getOreFeature(OreLibrary.SKUTTERUDITE));
 			addFeature(biome, getOreFeature(OreLibrary.WOLFRAMITE)); //in granite only
+			addFeature(biome, getOreFeature(OreLibrary.CHALCOPYRITE));
 			
 			if (biome.getCategory() == Category.EXTREME_HILLS || biome.getCategory() == Category.MESA) 
 			{
@@ -171,6 +183,31 @@ public class OreGen
 		}
 	}
 	
+
+	
+	//https://github.com/Qmunity/BluePower/blob/59c3c81cccc8e83fe6c6f415cb2be99a41d7f8dc/src/main/java/com/bluepowermod/world/BPWorldGen.java#L69
+	public static void addFeature(Biome biome, ConfiguredFeature<?, ?> configuredFeature) 
+	{
+		
+		//List<List<Supplier<ConfiguredFeature<?, ?>>>> biomeFeatures = new ArrayList<>(biome.func_242440_e().func_242498_c());
+        List<List<Supplier<ConfiguredFeature<?, ?>>>> biomeFeatures = biome.getGenerationSettings().getFeatures();
+
+
+        //List<List<Supplier<ConfiguredFeature<?, ?>>>> biomeFeatures = new ArrayList<>(biome.getGenerationSettings().getFeatures());
+        //WHY do we do this
+        while (biomeFeatures.size() <= GenerationStage.Decoration.UNDERGROUND_ORES.ordinal()) 
+        {
+            biomeFeatures.add(Lists.newArrayList());
+        }
+        List<Supplier<ConfiguredFeature<?, ?>>> features = new ArrayList<>(biomeFeatures.get(GenerationStage.Decoration.UNDERGROUND_ORES.ordinal()));
+        features.add(() -> configuredFeature);
+        biomeFeatures.set(GenerationStage.Decoration.UNDERGROUND_ORES.ordinal(), features);
+        
+        //WHY do we do this
+        ObfuscationReflectionHelper.setPrivateValue(BiomeGenerationSettings.class, biome.getGenerationSettings(), biomeFeatures, "field_242484_f");
+    }
+	
+	/* OLD 1.16.1
 	private static void addFeature(Biome biome, @Nullable ConfiguredFeature<?, ?> feature) 
 	{
         if (feature != null) 
@@ -178,9 +215,10 @@ public class OreGen
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, feature);
         }
     }
+    */
 	
 	/*
-	 * OLD
+	 * OLD 
 
 	private static void addOre(Biome biome, Ores.OreLibrary ore, Block block)
 	{

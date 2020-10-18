@@ -1,9 +1,9 @@
 package com.bixel.rec.init;
 
 import com.bixel.rec.RecMod;
-import com.bixel.rec.objects.tileentities.BaseTileEntity;
-import com.bixel.rec.objects.tileentities.QuarryTileEntity;
-import com.bixel.rec.objects.tileentities.RecFurnaceTileEntity;
+import com.bixel.rec.objects.tiles.BaseTileEntity;
+import com.bixel.rec.objects.tiles.QuarryTileEntity;
+import com.bixel.rec.objects.tiles.RecFurnaceTileEntity;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;

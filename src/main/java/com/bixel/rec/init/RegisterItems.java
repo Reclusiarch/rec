@@ -6,7 +6,6 @@ import com.bixel.rec.objects.items.SledgeHammer;
 import com.bixel.rec.objects.materials.RecMaterials;
 
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
 import net.minecraftforge.fml.RegistryObject;
@@ -27,6 +26,7 @@ public class RegisterItems
 	 */
 	public static final RegistryObject<Item> CHUNKS_AZURITE = ITEMS.register("chunks_azurite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_BORNITE = ITEMS.register("chunks_bornite", () -> new Item(prop));
+	public static final RegistryObject<Item> CHUNKS_CHALCOPYRITE = ITEMS.register("chunks_chalcopyrite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_COBALTITE = ITEMS.register("chunks_cobaltite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_DIGENITE = ITEMS.register("chunks_digenite", () -> new Item(prop));
 	public static final RegistryObject<Item> CHUNKS_DIOPTASE = ITEMS.register("chunks_dioptase", () -> new Item(prop));
@@ -42,25 +42,27 @@ public class RegisterItems
 	/**
 	 * GANGUE
 	 */
-	public static final RegistryObject<Item> GANGUE_AZURITE_DUST = ITEMS.register("gangue_azurite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_BORNITE_DUST = ITEMS.register("gangue_bornite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_COBALTITE_DUST = ITEMS.register("gangue_cobaltite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_DIGENITE_DUST = ITEMS.register("gangue_digenite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_DIOPTASE_DUST = ITEMS.register("gangue_dioptase", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_ERYTHRITE_DUST = ITEMS.register("gangue_erythrite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_GOETHITE_DUST = ITEMS.register("gangue_goethite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_HEMATITE_DUST = ITEMS.register("gangue_hematite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_LIMONITE_DUST = ITEMS.register("gangue_limonite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_MAGNETITE_DUST = ITEMS.register("gangue_magnetite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_MOLYBDENITE_DUST = ITEMS.register("gangue_molybdenite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_SKUTTERUDITE_DUST = ITEMS.register("gangue_skutterudite", () -> new Item(prop));
-	public static final RegistryObject<Item> GANGUE_WOLFRAMITE_DUST = ITEMS.register("gangue_wolframite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_AZURITE = ITEMS.register("gangue_azurite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_BORNITE = ITEMS.register("gangue_bornite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_CHALCOPYRITE = ITEMS.register("gangue_chalcopyrite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_COBALTITE = ITEMS.register("gangue_cobaltite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_DIGENITE = ITEMS.register("gangue_digenite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_DIOPTASE = ITEMS.register("gangue_dioptase", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_ERYTHRITE = ITEMS.register("gangue_erythrite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_GOETHITE = ITEMS.register("gangue_goethite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_HEMATITE = ITEMS.register("gangue_hematite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_LIMONITE = ITEMS.register("gangue_limonite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_MAGNETITE = ITEMS.register("gangue_magnetite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_MOLYBDENITE = ITEMS.register("gangue_molybdenite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_SKUTTERUDITE = ITEMS.register("gangue_skutterudite", () -> new Item(prop));
+	public static final RegistryObject<Item> GANGUE_WOLFRAMITE = ITEMS.register("gangue_wolframite", () -> new Item(prop));
 	
 	/**
 	 * DUST
 	 */
 	public static final RegistryObject<Item> DUST_AZURITE = ITEMS.register("dust_azurite", () -> new Item(prop));
 	public static final RegistryObject<Item> DUST_BORNITE = ITEMS.register("dust_bornite", () -> new Item(prop));
+	public static final RegistryObject<Item> DUST_CHALCOPYRITE = ITEMS.register("dust_chalcopyrite", () -> new Item(prop));
 	public static final RegistryObject<Item> DUST_COBALTITE = ITEMS.register("dust_cobaltite", () -> new Item(prop));
 	public static final RegistryObject<Item> DUST_DIGENITE = ITEMS.register("dust_digenite", () -> new Item(prop));
 	public static final RegistryObject<Item> DUST_DIOPTASE = ITEMS.register("dust_dioptase", () -> new Item(prop));
@@ -78,6 +80,7 @@ public class RegisterItems
 	 */
 	public static final RegistryObject<Item> SMALLDUST_AZURITE = ITEMS.register("smalldust_azurite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_BORNITE = ITEMS.register("smalldust_bornite", () -> new Item(prop));
+	public static final RegistryObject<Item> SMALLDUST_CHALCOPYRITE = ITEMS.register("smalldust_chalcopyrite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_COBALTITE = ITEMS.register("smalldust_cobaltite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_DIGENITE = ITEMS.register("smalldust_digenite", () -> new Item(prop));
 	public static final RegistryObject<Item> SMALLDUST_DIOPTASE = ITEMS.register("smalldust_dioptase", () -> new Item(prop));
@@ -95,6 +98,7 @@ public class RegisterItems
 	 */
 	public static final RegistryObject<RecOreItem> ORE_AZURITE = ITEMS.register("ore_azurite", () -> new RecOreItem(RegisterBlocks.ORE_AZURITE.get()));
 	public static final RegistryObject<RecOreItem> ORE_BORNITE = ITEMS.register("ore_bornite", () -> new RecOreItem(RegisterBlocks.ORE_BORNITE.get()));
+	public static final RegistryObject<RecOreItem> ORE_CHALCOPYRITE = ITEMS.register("ore_chalcopyrite", () -> new RecOreItem(RegisterBlocks.ORE_CHALCOPYRITE.get()));
 	public static final RegistryObject<RecOreItem> ORE_COBALTITE = ITEMS.register("ore_cobaltite", () -> new RecOreItem(RegisterBlocks.ORE_COBALTITE.get()));
 	public static final RegistryObject<RecOreItem> ORE_DIGENITE = ITEMS.register("ore_digenite", () -> new RecOreItem(RegisterBlocks.ORE_DIGENITE.get()));
 	public static final RegistryObject<RecOreItem> ORE_DIOPTASE = ITEMS.register("ore_dioptase", () -> new RecOreItem(RegisterBlocks.ORE_DIOPTASE.get()));

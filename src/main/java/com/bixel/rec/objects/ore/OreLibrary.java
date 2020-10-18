@@ -18,7 +18,7 @@ public enum OreLibrary implements IItemProvider
 	//Colors for Bornite:: pink-purple 255, 43, 96 -- blue 74, 61, 255 -- yellow-orange 255, 165,48 -- glow 88 //dust color burn 88
 	BORNITE(8, 0, 0, 100, 8, OreCategory.SULFIDE_MINERAL, 2, 15, 1), //extreme hills, mesa
 	//COVELLITE(3, 2, 20, 60, OreCategory.SULFIDE_MINERAL, 1, 10, 0),
-	//CHALCOPYRITE(6, 1, 20, 60, OreCategory.SULFIDE_MINERAL, 3, 30, 2),
+	CHALCOPYRITE(8, 0, 0, 60, 8, OreCategory.SULFIDE_MINERAL, 3, 15, 2), //anywhere --most common copper ore 70%
 	//MALACHITE(2, 4, 20, 60, OreCategory.CARBONATE_MINERAL, 4, 30, 2),
 	//CUPRITE(2, 1, 20, 60, OreCategory.OXIDE_MINERAL, 3, 15, 2),
 	AZURITE(8, 0, 0, 70, 8, OreCategory.CARBONATE_MINERAL, 3, 30, 2), //desert, beaches

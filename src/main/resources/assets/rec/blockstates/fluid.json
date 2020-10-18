@@ -1,0 +1,29 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "forge:fluid"
+	},
+	"variants": {
+		"alkaline_solution": [
+			{
+				"custom": {
+					"fluid": "alkaline_solution"
+				}
+			}
+		],
+		"ethylene_glycol": [
+			{
+				"custom": {
+					"fluid": "ethylene_glycol"
+				}
+			}
+		],
+		"glowstone": [
+			{
+				"custom": {
+					"fluid": "glowstone"
+				}
+			}
+		]
+	}
+}

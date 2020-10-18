@@ -6,7 +6,7 @@ import javax.annotation.Nonnull;
 
 import com.bixel.rec.init.RegisterBlocks;
 import com.bixel.rec.init.RegisterContainers;
-import com.bixel.rec.objects.tileentities.RecFurnaceTileEntity;
+import com.bixel.rec.objects.tiles.RecFurnaceTileEntity;
 import com.bixel.rec.util.FunctionalIntReferenceHolder;
 
 import net.minecraft.entity.player.PlayerEntity;

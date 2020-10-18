@@ -22,27 +22,16 @@ public class RecFurnaceScreen extends ContainerScreen<RecFurnaceContainer>
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	
-	//protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
-	@Override
-	protected void func_230450_a_(MatrixStack p_230450_1_, float partialTicks, int mouseX, int mouseY) 
-	{
-		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
-		this.minecraft.getTextureManager().bindTexture(TEXTURE);
-		this.blit(p_230450_1_, this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
-		//draws the progress bar
-		this.blit(p_230450_1_, this.guiLeft + 79, this.guiTop + 35, 176, 0, this.container.getSmeltProgressionScaled(), 16);
-	}
 
-	//drawGuiContainerForegroundLayer
 	@Override
-	protected void func_230459_a_(MatrixStack p_230430_1_, int mouseX, int mouseY) 
+	protected void drawGuiContainerForegroundLayer(MatrixStack matrixStack, int mouseX, int mouseY) 
 	{
-		super.func_230459_a_(p_230430_1_, mouseX, mouseY); 
+		//super.func_230459_a_(p_230430_1_, mouseX, mouseY); 
+		super.drawGuiContainerForegroundLayer(matrixStack, mouseX, mouseY); 
 		//this.font.drawString(this.title.getFormattedText(), 8.0f, 6.0f, 4210752);
-		this.font.drawString(p_230430_1_, this.title.getUnformattedComponentText(), 8.0f, 8.0f, 0x404040);
+		this.font.drawString(matrixStack, this.getTitle().getUnformattedComponentText(), 8.0f, 8.0f, 0x404040);
 		//this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0f, 90.0f, 4210752);
-		this.font.drawString(p_230430_1_, this.playerInventory.getDisplayName().getUnformattedComponentText(), 8.0f, 69.0f, 0x404040);
+		this.font.drawString(matrixStack, this.playerInventory.getDisplayName().getUnformattedComponentText(), 8.0f, 69.0f, 0x404040);
 	}
 
 	@Override
@@ -51,6 +40,16 @@ public class RecFurnaceScreen extends ContainerScreen<RecFurnaceContainer>
 		this.renderBackground(p_230430_1_);
 		super.render(p_230430_1_, mouseX, mouseY, partialTicks);
 		//renderHoveredToolTip
-		this.func_230451_b_(p_230430_1_, mouseX, mouseY);
+		//this.render(p_230430_1_, mouseX, mouseY);
+	}
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(MatrixStack matrixStack, float partialTicks, int x, int y) 
+	{
+		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
+		this.minecraft.getTextureManager().bindTexture(TEXTURE);
+		this.blit(matrixStack, this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
+		//draws the progress bar
+		this.blit(matrixStack, this.guiLeft + 79, this.guiTop + 35, 176, 0, this.container.getSmeltProgressionScaled(), 16);
 	}
 }

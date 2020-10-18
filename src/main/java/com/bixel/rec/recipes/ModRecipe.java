@@ -42,7 +42,7 @@ public class ModRecipe implements IModRecipe
 	public ResourceLocation getId() { return this.id; }
 
 	@Override
-	public IRecipeSerializer<?> getSerializer() { return RegisterRecipeSerializer.EXAMPLE_SERIALIZER.get(); }
+	public IRecipeSerializer<?> getSerializer() { return RegisterRecipeSerializer.EXAMPLE_SERIALIZER.get(); } //RegisterRecipeSerializer.EXAMPLE_SERIALIZER.get(); }
 
 	@Override
 	public Ingredient getInput() { return this.input; }

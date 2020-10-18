@@ -14,6 +14,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 
 //https://github.com/mekanism/Mekanism/blob/a8572791196d30e9108d9db7679c634a42bd7838/src/main/java/mekanism/common/registration/impl/FluidRegistryObject.java#L14
+//https://github.com/CoFH/CoFHCore/blob/1.12/src/main/java/cofh/core/fluid/FluidCore.java
 public class FluidRegistryObject<STILL extends Fluid, FLOWING extends Fluid, BLOCK extends FlowingFluidBlock, BUCKET extends BucketItem> implements IFluidProvider
 {
 	private RegistryObject<STILL> stillRO;
@@ -28,10 +29,16 @@ public class FluidRegistryObject<STILL extends Fluid, FLOWING extends Fluid, BLO
     
     public FluidRegistryObject(String name) 
     {
+    	//new ResourceLocation(modName, "blocks/fluid/" + fluidName + "_still")
+    	this.stillRO = RegistryObject.of(RecMod.loc("fluid/" + name + "_still"), ForgeRegistries.FLUIDS); 
+        this.flowingRO = RegistryObject.of(RecMod.loc("fluid/" + name + "_flow"), ForgeRegistries.FLUIDS);
+        this.blockRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, name), ForgeRegistries.BLOCKS);
+        this.bucketRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "bucket_" + name), ForgeRegistries.ITEMS);
+        /*
         this.stillRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, name), ForgeRegistries.FLUIDS);
         this.flowingRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "flowing_" + name), ForgeRegistries.FLUIDS);
         this.blockRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, name), ForgeRegistries.BLOCKS);
-        this.bucketRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "bucket_" + name), ForgeRegistries.ITEMS);
+        this.bucketRO = RegistryObject.of(new ResourceLocation(RecMod.MOD_ID, "bucket_" + name), ForgeRegistries.ITEMS);*/
     }
     
   //Make sure these update methods are package local as only the FluidDeferredRegister should be messing with them

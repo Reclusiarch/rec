@@ -1,16 +1,11 @@
-# This is an example mods.toml file. It contains the data relating to the loading mods.
-# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
-# The overall format is standard TOML format, v0.5.0.
-# Note that there are a couple of TOML lists in this file.
-# Find more information on toml format here:  https://github.com/toml-lang/toml
-
 modLoader="javafml"
-loaderVersion="[32,)"
-issueTrackerURL="http://my.issue.tracker/"
+loaderVersion="[34,)"
+license="GNU General Public License v3.0"
+
 
 [[mods]]
 modId="rec"
-version="0.1.0"
+version="0.2.0"
 displayName="Reclusiarch Mod"
 updateJSONURL="http://myurl.me/"
 displayURL="http://example.com/"
@@ -23,20 +18,9 @@ This mod adds inspired new Ores and ways of processing the Ores
 '''
 
 [[dependencies.rec]] #optional
-    # the modid of the dependency
     modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[32,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-    ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
-# Here's another dependency
-[[dependencies.rec]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.16.1]"
+    # versionRange="[32,)" 1.16.1
+    versionRange="[34,)" #mandatory
     ordering="NONE"
     side="BOTH"

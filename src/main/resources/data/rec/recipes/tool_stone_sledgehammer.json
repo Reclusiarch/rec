@@ -10,7 +10,7 @@
     },
     "i":
     {
-      "tag": "minecraft:furnace_materials"
+      "item":"minecraft:stone"
     }
   },
   "result":

@@ -2,6 +2,8 @@ package com.bixel.rec.config;
 
 import java.util.Map;
 
+import com.bixel.rec.config.value.CachedBooleanValue;
+import com.bixel.rec.config.value.CachedIntValue;
 import com.bixel.rec.objects.ore.OreLibrary;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;

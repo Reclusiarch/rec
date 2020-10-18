@@ -3,7 +3,8 @@ package com.bixel.rec.objects.blocks;
 import java.util.Random;
 
 import com.bixel.rec.init.RegisterTileEntities;
-import com.bixel.rec.objects.tileentities.RecFurnaceTileEntity;
+import com.bixel.rec.objects.tiles.RecFurnaceTileEntity;
+import com.bixel.rec.util.NBTConstants;
 import com.bixel.rec.util.handler.FurnaceItemHandler;
 
 import net.minecraft.block.Block;
@@ -34,7 +35,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 
 public class RecFurnaceBlock extends ModelBlock
 {
-	public static BooleanProperty LIT = BooleanProperty.create("lit");
+	public static BooleanProperty LIT = BooleanProperty.create(NBTConstants.ACTIVE);
 
 	public RecFurnaceBlock(Properties properties) 
 	{

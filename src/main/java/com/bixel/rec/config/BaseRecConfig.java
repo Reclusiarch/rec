@@ -3,6 +3,9 @@ package com.bixel.rec.config;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bixel.rec.config.value.CachedPrimitiveValue;
+import com.bixel.rec.config.value.CachedResolvableConfigValue;
+
 public abstract class BaseRecConfig implements IRecConfig 
 {
     private final List<CachedResolvableConfigValue<?, ?>> cachedConfigValues = new ArrayList<>();

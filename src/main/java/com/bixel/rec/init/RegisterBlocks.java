@@ -40,6 +40,7 @@ public class RegisterBlocks
 	 */
 	public static final RegistryObject<RecOreBlock> ORE_AZURITE = BLOCKS.register("ore_azurite", () -> OreLibrary.AZURITE.block);
 	public static final RegistryObject<RecOreBlock> ORE_BORNITE = BLOCKS.register("ore_bornite", () -> OreLibrary.BORNITE.block);
+	public static final RegistryObject<RecOreBlock> ORE_CHALCOPYRITE = BLOCKS.register("ore_chalcopyrite", () -> OreLibrary.CHALCOPYRITE.block);
 	public static final RegistryObject<RecOreBlock> ORE_COBALTITE = BLOCKS.register("ore_cobaltite", () -> OreLibrary.COBALTITE.block);
 	public static final RegistryObject<RecOreBlock> ORE_DIGENITE = BLOCKS.register("ore_digenite", () -> OreLibrary.DIGENITE.block);
 	public static final RegistryObject<RecOreBlock> ORE_DIOPTASE = BLOCKS.register("ore_dioptase", () -> OreLibrary.DIOPTASE.block);
